@@ -1,99 +1,83 @@
-# Kakuro-Solver-CSP
-Here’s a polished and professional README.md file for your Kakuro Puzzle Solver project, suitable for GitHub:
+🧠 Kakuro Puzzle Solver
 
-🔢 Kakuro Puzzle Solver
-
-This Python project provides an intelligent solver for Kakuro puzzles using Backtracking Search enhanced with heuristics like Minimum Remaining Values (MRV) and Least Constraining Value (LCV). It features a command-line interface that allows users to select difficulty levels and solving strategies.
+This project implements an AI-based Kakuro Puzzle Solver using backtracking search, optionally enhanced with heuristics like the Least Constraining Value (LCV) and Minimum Remaining Values (MRV). It is designed to run in Google Colab, allowing interactive puzzle solving with selectable difficulty levels and solving strategies.
 
 📌 Features
-	•	✅ Backtracking search algorithm
-	•	🧠 Heuristic enhancements: MRV and LCV for smarter decisions
-	•	🎮 Multiple difficulty levels: Easy, Medium, Hard, and Expert
-	•	🔁 Step-by-step puzzle state visualization
-	•	🧪 Modular, extensible design for future improvements
 
-🧩 What is Kakuro?
+	•	✅ Solves Kakuro puzzles using backtracking search
+	•	🧩 Supports multiple difficulty levels: Easy, Medium, Hard, Expert
+	•	⚙️ Optional heuristics:
+	•	Standard Backtracking
+	•	LCV (Least Constraining Value)
+	•	🔍 Smart clue selection using MRV heuristic
+	•	📉 Visualizes the puzzle grid after each assignment
 
-Kakuro is a logic puzzle that combines elements of Sudoku and crosswords. Players must fill white cells with digits (1-9) so that the sum matches the clues in the black cells. Each sequence must use unique digits.
+🧱 How It Works
 
-🛠️ How It Works
-	1.	Puzzle Representation:
-	•	Grid-based structure with three cell types:
-	•	BLACK cells: Blocked, unused
-	•	CLUE cells: Contain sum targets for horizontal/vertical sequences
-	•	WHITE cells: Fillable with digits 1-9
-	2.	Backtracking Search:
-	•	Recursively tries valid combinations
-	•	Checks for consistency with clue sums and uniqueness
-	3.	Heuristics (optional):
-	•	LCV (Least Constraining Value): Picks values that limit future choices the least
-	•	MRV (Minimum Remaining Values): Picks clues with the fewest unassigned cells first
+	1.	The puzzle is built using a combination of:
+	•	Black cells (unusable)
+	•	Clue cells (define target sums for rows/columns)
+	•	White cells (fillable with digits 1–9)
+	2.	The agent uses backtracking to explore potential values that satisfy all constraints.
+	3.	With heuristics enabled, the solver prioritizes clues and values that are least restrictive.
 
-🚀 Getting Started
+▶️ Run in Google Colab
 
-Prerequisites
-	•	Python 3.x
+Or manually:
 
-Installation
+	1.	Upload the .py file or paste the code into a new Colab notebook.
+	2.	Run the notebook cell.
+	3.	Follow the console prompts to select:
+	•	Difficulty level (1–4)
+	•	Heuristic method (1–2)
 
-Clone the repository:
+🧪 Example Usage
 
-git clone https://github.com/yourusername/kakuro-solver.git
-cd kakuro-solver
 
-Running the Solver
+When you run the notebook, you’ll be prompted like this:
 
-python kakuro_solver.py
-
-You will be prompted to:
-	1.	Choose a difficulty level (Easy, Medium, Hard, Expert)
-	2.	Choose a heuristic (Standard or Heuristic-enhanced)
-	3.	Watch the puzzle solve itself step-by-step
-
-📂 Project Structure
-
-.
-├── kakuro_solver.py     # Main solver script
-├── README.md            # Project documentation
-└── (You may add puzzle configs or modules in the future)
-
-🧠 Algorithms Used
-	•	Backtracking Search for exploring valid configurations
-	•	Constraint Propagation via consistency checks
-	•	Heuristics:
-	•	Minimum Remaining Values (MRV)
-	•	Least Constraining Value (LCV)
-
-✨ Sample Output
 
 Choose a level:
+
 1. Easy
 2. Medium
-...
+3. Hard
+4. Expert
+
+Enter the number of the level: 1
+
 Choose a heuristic:
-1. Standard
-2. LCV-enhanced
+1. Standard Backtracking Search
+2. Backtracking Search with Least Constraining Value (LCV) heuristic
+Enter the number of the heuristic: 2
 
-[Puzzle solving animation]
-Solution found!
-Solution time: 1.23 seconds
+Then the puzzle is solved step-by-step, printing the board after each change.
 
-📌 To Do
-	•	Implement medium, hard, and expert puzzle data
-	•	Add GUI or web interface
-	•	Add unit tests
-	•	Export solution to file
+📁 Project Structure
 
-🤝 Contributing
+kakuro_solver/
 
-Contributions are welcome! Feel free to fork the repo and submit pull requests.
+├── kakuro_solver.py   # Full source code with puzzle setup and solver logic
 
-📄 License
+├── README.md          # Project overview and usage instructions
 
-This project is licensed under the MIT License. See LICENSE for details.
+🧠 Algorithms & Heuristics
 
-🙌 Acknowledgments
-	•	Inspired by classic logic puzzle games
-	•	Implemented as a demonstration of constraint satisfaction problem (CSP) solving
+	•	Backtracking Search: Tries possible values recursively with rollback on conflict
+	•	MRV (Minimum Remaining Values): Prioritizes clues with fewer unknowns
+	•	LCV (Least Constraining Value): Prefers values that allow more future options
 
-Let me know if you want a version with badge icons (e.g., Python version, License, etc.) or Markdown-ready screenshots!
+🛠 Requirements
+
+No external libraries are needed. Everything is built using Python 3’s standard library.
+
+🏗️ TODO / Extensions
+
+	•	Add more levels and randomized puzzles
+	•	Export solved puzzles
+	•	Implement forward checking
+	•	Visual GUI for puzzles
+
+👨‍💻 Author
+
+Developed by Amir-abbas Alvand.
